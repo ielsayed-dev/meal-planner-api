@@ -1,12 +1,15 @@
 from rest_framework import generics, permissions
 from rest_framework.filters import SearchFilter
+from django_filters.rest_framework import DjangoFilterBackend
 from .models import Recipe
 from .serializers import RecipeSerializer
+
 
 class RecipeListCreateView(generics.ListCreateAPIView):
     serializer_class = RecipeSerializer
     permission_classes = [permissions.IsAuthenticated]
-    filter_backends = [SearchFilter]
+    filter_backends = [DjangoFilterBackend, SearchFilter]
+    filterset_fields = ["category", "preparation_time", "cooking_time"]
     search_fields = ["name"]
 
     def get_queryset(self):
@@ -22,3 +25,5 @@ class RecipeDetailView(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return Recipe.objects.filter(user=self.request.user)
+
+
