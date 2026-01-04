@@ -1,31 +1,39 @@
-# Meal Planner API
+# Meal Planner and Recipe Management API
 
-A Django REST Framework backend for creating and managing recipes, ingredients, categories, meal plans, and automatic shopping lists.
+## Project Overview
+
+The Meal Planner and Recipe Management API is a backend application built using Django and Django REST Framework. The project allows users to create, manage, and organise recipes, as well as plan meals in a structured and secure way.
+
+This project was developed as part of the Backend Engineering Capstone and focuses on CRUD operations, authentication, filtering, pagination, and clean API design.
+
+---
 
 ## Features
-- User registration & JWT authentication
-- CRUD for categories, ingredients, recipes
-- Weekly meal planning
-- Future: shopping list generator
-- Fully structured backend following best practices
 
-## Getting Started
+- User authentication using JWT
+- Create, read, update, and delete recipes
+- User specific access control for recipes
+- Recipe search by name
+- Recipe filtering by category, preparation time, and cooking time
+- Pagination for recipe listing endpoints
+- Meal planning related endpoints (basic structure)
 
-### Install dependencies
-pip install -r requirements.txt
+---
 
-### Apply migrations
-python manage.py migrate
+## Technologies Used
 
-### Create a superuser
-python manage.py createsuperuser
+- Python
+- Django
+- Django REST Framework
+- Django Filter
+- Simple JWT Authentication
+- SQLite (development database)
 
-### Run server
-python manage.py runserver
+---
 
-## ERD
-See Capstone Project Part 2 document for the full ERD diagram.
+## Installation and Setup
 
-## Author
-Islam Mohamed Elsayed
-Built for ALX Capstone Project – Backend API.
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd meal-planner-api
