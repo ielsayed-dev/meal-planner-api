@@ -9,7 +9,7 @@ class RecipeListCreateView(generics.ListCreateAPIView):
     serializer_class = RecipeSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend, SearchFilter]
-    filterset_fields = ["category", "preparation_time", "cooking_time"]
+    filterset_fields = ["category", "preparation_time"]
     search_fields = ["name"]
 
     def get_queryset(self):
